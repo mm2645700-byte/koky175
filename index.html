@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counting Down...</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+            </filter>
+        </defs>
+    </svg>
+
+    <div id="countdown-screen">
+        <h1>Counting down to the Best Day...</h1>
+        <div class="timer">
+            <div class="time-box"><span id="days">00</span><label>Days</label></div>
+            <div class="time-box"><span id="hours">00</span><label>Hrs</label></div>
+            <div class="time-box"><span id="minutes">00</span><label>Min</label></div>
+            <div class="time-box"><span id="seconds">00</span><label>Sec</label></div>
+        </div>
+    </div>
+
+    <div id="main-content">
+        <audio id="music" src="assets/music.mp3" loop></audio>
+        <div class="main-container">
+            <div class="cake-container">
+                <div class="layer bottom-layer"></div>
+                <div class="layer middle-layer"></div>
+                <div class="layer top-layer">
+                    <div class="icing-box">
+                        <div class="icing-top"></div>
+                        <div class="drip" style="left: 10%; height: 7vmin; animation: drip-fall 0.4s ease forwards 2.2s;"></div>
+                        <div class="drip" style="left: 35%; height: 5vmin; animation: drip-fall 0.3s ease forwards 2.5s;"></div>
+                        <div class="drip" style="left: 60%; height: 8vmin; animation: drip-fall 0.5s ease forwards 2.7s;"></div>
+                        <div class="drip" style="left: 85%; height: 6vmin; animation: drip-fall 0.3s ease forwards 3s;"></div>
+                    </div>
+                    <div class="numbers-container">
+                        <div class="number-candle">1<div class="flame"></div></div>
+                        <div class="number-candle">7<div class="flame"></div></div>
+                    </div>
+                </div>
+            </div>
+            <div id="typewriter" class="Happy__Birthday"></div>
+        </div>
+
+        <div class="gift-icon" onclick="openScroll()">🎁</div>
+
+        <div class="letter-modal" id="letterModal">
+            <div class="scroll-wrapper" id="scrollWrapper">
+                <span class="close-btn" onclick="closeScroll()">✕</span>
+                <div class="roller top"></div> 
+                <div class="scroll-content">
+                    <div class="text-container">
+                        <p id="message-text"></p>
+                    </div>
+                </div>
+                <div class="roller bottom"></div> 
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
